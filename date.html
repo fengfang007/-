@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+//    1.使用正则，进行比较
+    let btime = "2018-04-17";
+    let otime = "2017-09-12";
+    let d1 = new Date(btime.replace(/\-/g,"\/"));
+    let d2 = new Date (otime.replace(/\-/g,"\/"));
+    if(btime!="" && otime!="" && d1 >=d2)
+    {
+        alert("开始时间不能大于结束时间！");
+    }
+</script>
+
+<script>
+//     2.字符串,转化为数组，进行比较
+    let btime = "2018-04-17";
+    let otime = "2017-09-12";
+    let arr = new Array();
+    let arr1 = new Array();
+    arr=btime.split("-");
+    arr1=otime.split("-");
+    let d1 = new Date(arr[0],arr[1]-1,arr[2]); //月份要减去1
+    let d2 = new Date(arr1[0],arr1[1]-1,arr1[2]);
+
+    if( d1  > d2){
+        alert("cuowu")
+    }
+</script>
+知识点：Date对象 --用于处理日期和时间
+let date = new Date (year,month,day,hour,minutes,seconds, milliseconds)
+</body>
+</html>
